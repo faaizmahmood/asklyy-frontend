@@ -1,0 +1,60 @@
+/* modal */
+
+
+/* Modal Styles */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 10;
+ 
+}
+
+.smallModalContent {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 550px;
+  max-height: 500px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  z-index: 11;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (max-width:576px) {
+    width: calc(100% - 10%);
+  }
+
+}
+
+.closeBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+  transition: 0.2s ease;
+
+  &:hover {
+    color: red;
+  }
+
+  @media (max-width:576px) {
+    &{
+        top: 5px !important;
+    }
+  }
+}

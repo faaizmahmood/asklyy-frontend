@@ -1,0 +1,140 @@
+/* ================================
+   Protected Layout Styles
+   ================================ */
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+  overflow: hidden;
+
+  /* Sidebar menu item root */
+  .ps-menuitem-root {
+    transition: background 0.3s ease;
+
+    .pro-inner-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      color: #cbd5e1 !important;
+      font-size: 14px;
+    }
+
+    .pro-icon-wrapper {
+      color: #cbd5e1 !important;
+    }
+
+    &:hover {
+      background-color: #fff !important;
+
+      .pro-inner-item,
+      .pro-icon-wrapper,
+      svg {
+        color: #3b82f6 !important;
+      }
+    }
+
+    &.ps-active {
+      background-color: #fff !important;
+
+      .pro-inner-item,
+      .pro-icon-wrapper,
+      svg {
+        color: #1A1E34 !important;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/* ================================
+   Sidebar
+   ================================ */
+.sidebar {
+  .pro-menu {
+    padding-top: 1rem;
+  }
+
+  .sidebarWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 15px;
+  }
+
+  .topSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .bottomSection {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Override react-pro-sidebar defaults */
+  .pro-inner-item {
+    padding: 10px 20px;
+    color: #cbd5e1;
+    font-size: 14px;
+  }
+
+  .menuItem {
+    margin-top: 12px;
+    padding: 0 12px;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    &.compact {
+      padding: 0 !important;
+    }
+  }
+
+  .menuHeader {
+    background: transparent !important;
+
+    &:hover {
+      background: transparent !important;
+    }
+  }
+
+  .pro-icon-wrapper {
+    color: #cbd5e1;
+  }
+}
+
+/* ================================
+   Main Content
+   ================================ */
+.main {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #f8fafc;
+}
+
+/* ================================
+   Mobile Toggle
+   ================================ */
+.mobileToggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  background-color: #1e293b;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    background-color: #0f172a;
+  }
+}
