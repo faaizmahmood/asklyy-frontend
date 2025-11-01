@@ -21,7 +21,8 @@ const Chatbots = () => {
         showModal,
         handleSubmit,
         chatBotCreationLoading,
-        loading
+        loading,
+        handleCDNCopy
     } = useChatbots()
 
     const [searchParams] = useSearchParams();
@@ -57,7 +58,8 @@ const Chatbots = () => {
                     onBlock={handleBlock}
                     onDelete={handleDelete}
                     onTest={handleTest}
-                />
+                    onCDNCopy={handleCDNCopy}
+                    />
             ),
         },
     ];

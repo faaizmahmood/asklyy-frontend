@@ -96,6 +96,21 @@ const useChatbots = () => {
 
     const handleEdit = (id: number) => console.log("Edit bot:", id);
     const handleTest = (id: any, name: string) => navigate(`/chatbots?test=${id}&name=${name}`);
+    const handleCDNCopy = (id: any) =>{
+
+        const cdnLink = `<script src="https://t5u8yd0o9j.execute-api.ap-south-1.amazonaws.com/widget.js" data-bot-id="${id}" async crossorigin="anonymous"></script>`;
+    
+        navigator.clipboard.writeText(cdnLink)
+            .then(() => {
+                toast.success("CDN link copied to clipboard!");
+            })
+            .catch((err) => {
+                console.error("Could not copy text: ", err);
+                toast.error("Failed to copy CDN link.");
+            });
+
+    };
+
 
     return {
         rows,
@@ -107,7 +122,8 @@ const useChatbots = () => {
         showModal,
         handleSubmit,
         chatBotCreationLoading,
-        loading
+        loading,
+        handleCDNCopy
     }
 }
 

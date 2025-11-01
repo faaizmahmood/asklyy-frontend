@@ -16,9 +16,10 @@ interface ActionsMenuProps {
   onBlock: (id: number) => void;
   onDelete: (id: number) => void;
   onTest: (id: string | number, name: string) => void;
+  onCDNCopy: (id: string | number) => void;
 }
 
-const ActionsMenu = ({ id, name, status, onEdit, onBlock, onDelete, onTest }: ActionsMenuProps) => {
+const ActionsMenu = ({ id, name, status, onEdit, onBlock, onDelete, onTest, onCDNCopy }: ActionsMenuProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -92,7 +93,7 @@ const ActionsMenu = ({ id, name, status, onEdit, onBlock, onDelete, onTest }: Ac
 
         <MenuItem
           onClick={() => {
-            onTest(id, name);
+            onCDNCopy(id);
             handleClose();
           }}
         >
